@@ -3,9 +3,8 @@ site_name: pyDOE3
 site_description: Design of experiments for Python
 site_author: Abraham Lee
 site_url: https://pydoe3.readthedocs.io/
-docs_dir: mkd-docs     # where the source .md files now live
-site_dir: docs         # where MkDocs will output the built site
-
+docs_dir: mkd-docs # where the source .md files now live
+site_dir: docs # where MkDocs will output the built site
 
 # Repository
 # repo_name: relf/pydoe3
@@ -22,20 +21,22 @@ theme:
 
   # Theme features
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.top
-    - navigation.tracking
-    - search.highlight
-    - search.share
-    - search.suggest
-    - content.code.copy
-    - content.code.select
-    - content.action.edit
-    - content.action.view
-    - toc.follow
-    - toc.integrate
+    # content features
+    - content.code.copy # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/?h=code+copy#code-copy-button
+    # navigation features
+    - navigation.instant # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation+instant#instant-loading
+    - navigation.instant.progress # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation+instant#progress-indicator
+    - navigation.tracking # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation+instant#anchor-tracking
+    - navigation.tabs # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation+instant#navigation-tabs
+    - navigation.tabs.sticky # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation+instant#sticky-navigation-tabs
+    - navigation.sections # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation+instant#navigation-sections
+    - navigation.indexes # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation+instant#section-index-pages
+    - toc.follow # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation+instant#anchor-following
+    - navigation.top # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation+instant#back-to-top-button
+    # search features
+    - search.suggest # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/?h=search+highlight#search-suggestions
+    - search.highlight # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/?h=search+highlight#search-highlighting
+    - search.share # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/?h=search+highlight#search-sharing
 
   # Palette configuration
   palette:
@@ -43,7 +44,7 @@ theme:
       primary: indigo
       accent: indigo
       toggle:
-        icon: material/brightness-7 
+        icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
       primary: indigo
@@ -72,64 +73,35 @@ nav:
   - Taguchi Designs: taguchi.md
   - Optimal Designs: doe_optimal.md
 
-# Plugins
 plugins:
-  - search:
-      lang: en
-      separator: '[\s\-\.]+'
-  - minify:
+  - search: # https://squidfunk.github.io/mkdocs-material/plugins/search
+  - minify: # https://github.com/byrnereese/mkdocs-minify-plugin
       minify_html: true
 
 # Markdown extensions
 markdown_extensions:
-  # Python Markdown
-  - abbr
-  - admonition
-  - attr_list
-  - def_list
-  - footnotes
-  - md_in_html
+  - tables
   - toc:
       permalink: true
-      title: On this page
-  - tables
-
-  # Python Markdown Extensions
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret
+      title: Page contents
+  - admonition
   - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      pygments_lang_class: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tilde
+  - pymdownx.arithmatex:
+      generic: true
 
 # Extra CSS and JavaScript
-extra_css:
+extra_css:    # https://squidfunk.github.io/mkdocs-material/customization/#additional-css
   - assets/stylesheets/extra.css
 
 extra:
-  version:
-    provider: mike
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/relf/pydoe3
