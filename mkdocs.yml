@@ -1,0 +1,154 @@
+# MkDocs configuration for pyDOE3 documentation
+site_name: pyDOE3
+site_description: Design of experiments for Python
+site_author: Abraham Lee
+site_url: https://pydoe3.readthedocs.io/
+docs_dir: mkd-docs     # where the source .md files now live
+site_dir: docs         # where MkDocs will output the built site
+
+
+# Repository
+# repo_name: relf/pydoe3
+# repo_url: https://github.com/relf/pydoe3
+# edit_uri: edit/master/mkd-docs/docs/
+
+# Copyright
+copyright: Copyright &copy; 2013–2025 Abraham Lee
+
+# Configuration
+theme:
+  name: material
+  language: en
+
+  # Theme features
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.copy
+    - content.code.select
+    - content.action.edit
+    - content.action.view
+    - toc.follow
+    - toc.integrate
+
+  # Palette configuration
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  # Logo and favicon
+  favicon: assets/images/favicon.ico
+  logo: assets/images/logo_pydoe3.png
+
+  # Font configuration
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Navigation structure
+nav:
+  - Home: index.md
+  - Factorial Designs: factorial.md
+  - Response Surface Designs: rsm.md
+  - Randomized Designs: randomized.md
+  - Low-Discrepancy Sequences: low_discrepancy_sequences.md
+  - Sampling Designs: sampling_designs.md
+  - Taguchi Designs: taguchi.md
+  - Optimal Designs: doe_optimal.md
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-\.]+'
+  - minify:
+      minify_html: true
+
+# Markdown extensions
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      title: On this page
+  - tables
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Extra CSS and JavaScript
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/relf/pydoe3
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/pyDOE3/
+
+# Additional JavaScript for MathJax
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Validation settings
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    unrecognized_links: warn
