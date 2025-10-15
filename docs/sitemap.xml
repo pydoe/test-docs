@@ -1,35 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-         <loc>https://pydoe3.readthedocs.io/</loc>
-         <lastmod>2025-10-13</lastmod>
-    </url>
-    <url>
-         <loc>https://pydoe3.readthedocs.io/doe_optimal/</loc>
-         <lastmod>2025-10-13</lastmod>
-    </url>
-    <url>
-         <loc>https://pydoe3.readthedocs.io/factorial/</loc>
-         <lastmod>2025-10-13</lastmod>
-    </url>
-    <url>
-         <loc>https://pydoe3.readthedocs.io/low_discrepancy_sequences/</loc>
-         <lastmod>2025-10-13</lastmod>
-    </url>
-    <url>
-         <loc>https://pydoe3.readthedocs.io/randomized/</loc>
-         <lastmod>2025-10-13</lastmod>
-    </url>
-    <url>
-         <loc>https://pydoe3.readthedocs.io/rsm/</loc>
-         <lastmod>2025-10-13</lastmod>
-    </url>
-    <url>
-         <loc>https://pydoe3.readthedocs.io/sampling_designs/</loc>
-         <lastmod>2025-10-13</lastmod>
-    </url>
-    <url>
-         <loc>https://pydoe3.readthedocs.io/taguchi/</loc>
-         <lastmod>2025-10-13</lastmod>
-    </url>
 </urlset>

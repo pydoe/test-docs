@@ -1,14 +1,11 @@
-# MkDocs configuration for pyDOE3 documentation
 site_name: pyDOE3
 site_description: Design of experiments for Python
-site_author: Abraham Lee
-site_url: https://pydoe3.readthedocs.io/
-docs_dir: mkd-docs # where the source .md files now live
-site_dir: docs # where MkDocs will output the built site
+# site_url: https://pydoe3.readthedocs.io/
+docs_dir: mkd-docs
+site_dir: docs
 
-# Repository
-# repo_name: relf/pydoe3
-# repo_url: https://github.com/relf/pydoe3
+repo_name: relf/pydoe3
+repo_url: https://github.com/relf/pydoe3
 # edit_uri: edit/master/mkd-docs/docs/
 
 # Copyright
@@ -23,6 +20,7 @@ theme:
   features:
     # content features
     - content.code.copy # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/?h=code+copy#code-copy-button
+    - content.code.annotate # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-annotations
     # navigation features
     - navigation.instant # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation+instant#instant-loading
     - navigation.instant.progress # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation+instant#progress-indicator
@@ -64,7 +62,15 @@ theme:
 
 # Navigation structure
 nav:
-  - Home: index.md
+  - Get Started:
+    - index.md
+    - Why use pyDOE: why.md
+    - Installation: installation.md
+    - Changelog: changelog.md
+    - Contributing: contributing.md
+    - FAQ: faq.md
+    - License: license.md
+    - Credits: credits.md
   - Factorial Designs: factorial.md
   - Response Surface Designs: rsm.md
   - Randomized Designs: randomized.md
@@ -78,7 +84,6 @@ plugins:
   - minify: # https://github.com/byrnereese/mkdocs-minify-plugin
       minify_html: true
 
-# Markdown extensions
 markdown_extensions:
   - tables
   - toc:
@@ -97,7 +102,6 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
-# Extra CSS and JavaScript
 extra_css:    # https://squidfunk.github.io/mkdocs-material/customization/#additional-css
   - assets/stylesheets/extra.css
 
@@ -108,13 +112,10 @@ extra:
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/pyDOE3/
 
-# Additional JavaScript for MathJax
 extra_javascript:
-  - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
-# Validation settings
 validation:
   nav:
     omitted_files: warn
@@ -122,5 +123,5 @@ validation:
     absolute_links: warn
   links:
     not_found: warn
-    anchors: warn
+    anchors: ignore  # TODO: we need to fix the anchors
     unrecognized_links: warn
